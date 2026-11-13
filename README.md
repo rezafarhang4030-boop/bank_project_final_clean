@@ -74,10 +74,3 @@ This is an educational, in-memory project. Account data is not saved after the p
 
 The main menu and test suite have been exercised during development. Before publishing, run the tests locally from the exact folder you intend to upload and confirm that the output reports no failures.
 
-Git practice: Learning Modified state.
-
-i am learning git diff command
-
-this feature is developed in feature-interest branch
-
-this change belongs to the main branch
