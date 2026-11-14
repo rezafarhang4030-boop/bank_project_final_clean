@@ -3,7 +3,7 @@ from account import BankAccount
 
 class Bank:
     def __init__(self) -> None:
-        self.accounts = list[BankAccount] = []
+        self.accounts: list[BankAccount] = []
 
     def add_account(self , account: BankAccount) -> bool:
         if not isinstance(account , BankAccount):
