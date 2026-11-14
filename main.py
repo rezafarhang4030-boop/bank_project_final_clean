@@ -5,7 +5,7 @@ from bank import Bank
 bank = Bank()
 
 
-def read_amount(prompt):
+def read_amount(prompt: str) -> float | None:
     """Read a numeric amount from the user; return None if invalid."""
     try:
         amount = float(input(prompt))
@@ -19,7 +19,7 @@ def read_amount(prompt):
     return amount
 
 
-def create_account():
+def create_account() -> None:
     owner = input("Enter account owner's name: ").strip()
     account_number = input("Enter account number: ").strip()
 
@@ -54,7 +54,7 @@ def create_account():
         print("Could not create account. Check the account details.")
 
 
-def check_balance():
+def check_balance() -> None:
     account_number = input("Enter account number: ").strip()
     account = bank.find_account_by_number(account_number)
 
@@ -67,7 +67,7 @@ def check_balance():
     print(f"Balance: {account.get_balance():g}")
 
 
-def deposit_money():
+def deposit_money() -> None:
     account_number = input("Enter account number: ").strip()
     account = bank.find_account_by_number(account_number)
     if account is None:
@@ -84,7 +84,7 @@ def deposit_money():
         print("Deposit failed.")
 
 
-def withdraw_money():
+def withdraw_money() -> None:
     account_number = input("Enter account number: ").strip()
     account = bank.find_account_by_number(account_number)
     if account is None:
@@ -101,7 +101,7 @@ def withdraw_money():
         print("Withdrawal failed. Check the balance and amount.")
 
 
-def transfer_money():
+def transfer_money() -> None:
     source_number = input("Enter sender account number: ").strip()
     target_number = input("Enter recipient account number: ").strip()
 
@@ -127,7 +127,7 @@ def transfer_money():
         print("Transfer failed. Check the amount and sender's balance.")
 
 
-def show_transactions():
+def show_transactions() -> None:
     account_number = input("Enter account number: ").strip()
     account = bank.find_account_by_number(account_number)
     if account is None:
@@ -136,7 +136,7 @@ def show_transactions():
     account.show_transactions()
 
 
-def show_menu():
+def show_menu() -> None:
     print("\n===== BANKING SYSTEM =====")
     print("1. Create account")
     print("2. Check balance")
@@ -148,7 +148,7 @@ def show_menu():
     print("8. Exit")
 
 
-def main():
+def main() -> None:
     while True:
         show_menu()
         choice = input("Choose an option (1-8): ").strip()
